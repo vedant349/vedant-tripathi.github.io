@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research and Projects · Vedant Tripathi</title>
+<meta name="description" content="Independent economics research, a natural language analytics chatbot, and university coursework built in Python.">
+<meta name="author" content="Vedant Tripathi">
+<meta name="theme-color" content="#D22F25">
+<meta property="og:title" content="Research and Projects · Vedant Tripathi">
+<meta property="og:description" content="Independent economics research, a natural language analytics chatbot, and university coursework built in Python.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23D22F25'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='50' fill='%23fff' text-anchor='middle'%3EVT%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="hairline">
+  <div class="mast">
+    <div class="name-row">
+    <div class="socials">
+      <a class="s-li" href="https://www.linkedin.com/in/vedant-tripathi-lhs/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95C21.6 8.75 22 11.1 22 14.2V21h-4v-6.03c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-4V9z"/></svg>
+      </a>
+      <a class="s-tab" href="https://www.tabroom.com/index/results/team_results.mhtml?id1=1436071&amp;id2=1472393" target="_blank" rel="noopener" aria-label="Tabroom results">T</a>
+    </div>
+    <a class="wordmark" href="index.html">Vedant Tripathi</a>
+    </div>
+    <nav id="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="debate.html">Debate</a>
+      <a href="research.html">Research and Projects</a>
+      <a href="impact.html">Impact</a>
+      <a href="honors.html">Honors and Awards</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="mbtn" id="mbtn" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main>
+<section>
+    <div class="wrap">
+      <div class="intro">
+        <h1 class="title">Research and projects</h1>
+        <p class="lead">Independent research and university coursework, all built in Python.</p>
+      </div>
+
+      <div class="entry" style="--yc:var(--c-teal)">
+        <div class="entry-top"><h3>Predicting CPI through lagged changes in PPI</h3><div class="when">Sep 2025 – May 2026</div></div>
+        <div class="org">Independent research · submitted to the <a class="link" href="https://nhsjs.com" target="_blank" rel="noopener">National High School Journal of Science</a>, under peer review</div>
+        <p class="body">Producer prices are supposed to lead consumer prices, but by how long and how reliably? This paper examines the relationship between the Producer Price Index and the Consumer Price Index using U.S. economic data from 1947 to 2025, then checks whether it holds up across the periods where it matters most.</p>
+        <ul>
+          <li>Built lagged regression models across 3–12 month windows to isolate pass-through timing</li>
+          <li>Applied Ridge regression and cross-validation to address multicollinearity between overlapping lags</li>
+          <li>Reached an <b>R² of 0.97–0.98</b>, explaining roughly 97% of CPI variance</li>
+          <li>Evaluated predictive performance across major economic periods, including 2008 and the COVID-19 inflation spike</li>
+        </ul>
+        <div class="tools">Python, pandas, scikit-learn, matplotlib, FRED data</div>
+      </div>
+
+      <div class="entry" style="--yc:var(--c-red)">
+        <div class="entry-top"><h3>LensIQ, a natural-language analytics chatbot</h3><div class="when">Jul – Aug 2026</div></div>
+        <div class="org">Built during the <a class="link" href="https://www.blackstraw.ai" target="_blank" rel="noopener">Blackstraw</a> internship</div>
+        <p class="body">A chatbot for contact lens manufacturing operations that lets plant supervisors, maintenance engineers, and quality teams query production data in plain English instead of waiting on a data team.</p>
+        <ul>
+          <li>Designed a star schema across 12 tables in a Databricks lakehouse, modeling production events and error incidents against dimensions for plants, machines, shifts, products, and error types</li>
+          <li>Built an intelligence layer combining clustering to group recurring errors by pattern, z-score anomaly detection to flag deviations in temperature, yield, and cycle time, and correlation analysis to surface co-occurring errors</li>
+          <li>Configured a Genie AI interface that resolves natural-language questions into SQL across the full schema and returns results with visualizations</li>
+          <li>Stress-tested the system at 100× dataset scale, identifying how statistical assumptions in the anomaly layer degraded accuracy on complex root-cause queries</li>
+          <li>Presented the architecture and a live demo to company leadership</li>
+        </ul>
+        <div class="tools">Azure Databricks, SQL, Genie AI, Python</div>
+      </div>
+
+      <div class="entry" style="--yc:var(--c-teal)">
+        <div class="entry-top"><h3>Sentiment and emotion prediction</h3><div class="when">Apr – May 2026</div></div>
+        <div class="org">NYU GSTEM Data Science Program</div>
+        <p class="body">An interpretable text classifier built from scratch, then benchmarked against a standard machine learning baseline to see how far transparent, hand-engineered features can get you.</p>
+        <ul>
+          <li>Split 3,309 labeled sentences into 2,647 training and 662 test examples</li>
+          <li>Engineered word-frequency, sentence-length, and punctuation features using log-odds band analysis</li>
+          <li>Scored <b>69.18%</b> with the rule-based classifier against a <b>70.24%</b> TF-IDF and kNN benchmark</li>
+        </ul>
+        <div class="tools">Python, Jupyter Notebooks</div>
+      </div>
+
+      <div class="entry" style="--yc:var(--c-gold)">
+        <div class="entry-top"><h3>2D action video game</h3><div class="when">Jul 2025</div></div>
+        <div class="org">Coding Academy, Tufts University</div>
+        <p class="body">A complete real-time game written in Python and Pygame, presented as a final project and live demonstration at Tufts.</p>
+        <ul>
+          <li>Implemented a game loop handling input, player movement, enemy waves, and rendering</li>
+          <li>Used object-oriented architecture to manage players, enemies, and game state</li>
+        </ul>
+        <div class="tools">Python, Pygame, GitHub</div>
+      </div>
+
+      <div class="entry" style="--yc:var(--c-teal)">
+        <div class="entry-top"><h3>NYU GSTEM Data Science Program</h3><div class="when">Feb – May 2026</div></div>
+        <div class="org">New York University</div>
+        <p class="body">A university data science program covering data visualization in Python and Jupyter Notebooks, statistical modeling, and predictive analytics.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-top">
+    <div class="socials socials-foot">
+      <a class="s-li" href="https://www.linkedin.com/in/vedant-tripathi-lhs/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.75-1.95C21.6 8.75 22 11.1 22 14.2V21h-4v-6.03c0-1.44-.03-3.3-2.02-3.3-2.02 0-2.33 1.57-2.33 3.2V21h-4V9z"/></svg>
+      </a>
+      <a class="s-tab" href="https://www.tabroom.com/index/results/team_results.mhtml?id1=1436071&amp;id2=1472393" target="_blank" rel="noopener" aria-label="Tabroom results">T</a>
+    </div>
+  </div>
+  <div class="wrap foot">
+    <div>© <span id="yr">2026</span> Vedant Tripathi · Livingston, New Jersey</div>
+    <nav>
+      <a href="https://www.linkedin.com/in/vedant-tripathi-lhs/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.tabroom.com/index/results/team_results.mhtml?id1=1436071&amp;id2=1472393" target="_blank" rel="noopener">Tabroom</a>
+      <a href="mailto:tripathi.vedant@gmail.com">Email</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>
