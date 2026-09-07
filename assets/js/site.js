@@ -31,13 +31,36 @@
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ---- 4. elimination-depth chart (debate page only) ---- */
+  /* ---- 4. contact form opens a pre-filled email ---- */
+  var cform = document.getElementById('cform');
+  if (cform) {
+    cform.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var to      = cform.getAttribute('data-to');
+      var name    = (cform.elements.name.value || '').trim();
+      var email   = (cform.elements.email.value || '').trim();
+      var message = (cform.elements.message.value || '').trim();
+
+      var subject = name ? ('Message from ' + name) : 'Message from vedant-tripathi.com';
+      var body    = message;
+      if (name || email) {
+        body += '\n\n---\n';
+        if (name)  body += 'From: ' + name + '\n';
+        if (email) body += 'Reply to: ' + email + '\n';
+      }
+      window.location.href = 'mailto:' + to
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+    });
+  }
+
+  /* ---- 5. elimination-depth chart (debate page only) ---- */
   var host = document.getElementById('chartHost');
   if (!host) return;
 
   var TEAL = '#1D6E7A', GOLD = '#A8761B';
   var DATA = [
-    { t: 'JW Patterson TOC',     d: 'Apr 2026', v: 8, l: 'Silver bid, #22', c: TEAL },
+    { t: 'National TOC',        d: 'Apr 2026', v: 8, l: 'Qualified, #22',  c: TEAL },
     { t: 'TOC Digital Series 3', d: 'Mar 2026', v: 4, l: 'Double octos',    c: TEAL },
     { t: 'TOC Digital Series 2', d: 'Feb 2026', v: 4, l: 'Double octos',    c: TEAL },
     { t: 'Harvard Nationals',    d: 'Feb 2026', v: 3, l: 'Triple octos',    c: TEAL },
